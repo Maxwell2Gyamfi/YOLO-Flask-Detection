@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/main.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="main_page">
+
+        <div id="video">
+            <img id="myImg" src="" alt="your image" />
+            <img src="" id="robotcell" style="display: none;">
+        </div>
+        <div id="commands">
+            <div class="multi-button">
+                <button onclick="openCamera()">Video Feed</button>
+                <button onclick="detect(this)" id="all">Detect All</button>
+            </div>
+            <div class="multi-button">
+                <button onclick="detect(this)" id="1p">1p</button>
+                <button onclick="detect(this)" id="2p">2p</button>
+            </div>
+            <div class="multi-button">
+                <button onclick="detect(this)" id="5p">5p</button>
+                <button onclick="detect(this)" id="10p">10p</button>
+            </div>
+            <div class="multi-button">
+                <button onclick="detect(this)" id="20p">20p</button>
+                <button onclick="detect(this)" id="50p">50p</button>
+            </div>
+            <div class="multi-button">
+                <button onclick="detect(this)" id="1P">1P</button>
+                <button onclick="detect(this)" id="2P">2P</button>
+            </div>
+
+
+            <div>
+                <label>Confidence</label>
+            </div>
+
+            <div class="range-slider">
+                <input type="range" value="20" min="5" max="99" range="true" step="1" id="confidence"
+                    oninput="changeConfidence(this)">
+                <span class="range-value" id="confidence"></span>
+            </div>
+
+            <div>
+                <input type="file" onclick="unhideImage()" id="upload" hidden />
+                <label for="upload">Choose file</label>
+            </div>
+
+            <div>
+                <h2 id="total">Total is: </h2>
+            </div>
+        </div>
+        <div class="loader" style="display: none;"></div>
+    </div>
+
+</body>
+<script src="/static/scripts/main.js"></script>
+
+</html>
